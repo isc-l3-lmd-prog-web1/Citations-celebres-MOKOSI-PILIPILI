@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Accueil - Citations Célèbres</title>
+<style>
+  body { font-family: 'Segoe UI', Tahoma, sans-serif; margin:0; padding:0; background:#f2f2f2; }
+  header { background:#4a148c; color:white; padding:20px; text-align:center; }
+  nav { display:flex; justify-content:center; gap:15px; margin:10px 0; }
+  nav a { color:#4a148c; text-decoration:none; font-weight:bold; }
+  main { padding:20px; text-align:center; }
+  blockquote { font-size:1.5rem; font-style:italic; margin:20px auto; max-width:600px; }
+  footer { background:#4a148c; color:white; text-align:center; padding:10px; margin-top:20px; }
+  button { background:#4a148c; color:white; border:none; padding:10px 20px; cursor:pointer; border-radius:5px; margin-top:10px; }
+  @media(max-width:600px){ blockquote{ font-size:1.2rem; } nav { flex-direction:column; } }
+</style>
+</head>
+<body>
+<header>
+  <h1>Citations Célèbres</h1>
+</header>
+<nav>
+  <a href="index.html">Accueil</a>
+  <a href="themes.html">Par Thème</a>
+  <a href="auteurs.html">Par Auteur</a>
+  <a href="ajouter.html">Ajouter</a>
+  <a href="apropos.html">À propos</a>
+</nav>
+<main>
+  <h2>Citation du jour</h2>
+  <blockquote id="citation">"La vie est ce qui arrive quand on est occupé à faire d'autres projets." - John Lennon</blockquote>
+  <button onclick="changerCitation()">Nouvelle citation</button>
+</main>
+<footer>
+  &copy; 2026 Citations Célèbres
+</footer>
+<script>
+const citations = [
+  `"Le succès n'est pas final, l'échec n'est pas fatal : c'est le courage de continuer qui compte." - Winston Churchill`,
+  `"Soyez le changement que vous voulez voir dans le monde." - Mahatma Gandhi`,
+  `"La vie est ce qui arrive quand on est occupé à faire d'autres projets." - John Lennon`,
+  `"Le bonheur n'est pas quelque chose de prêt à l'emploi. Il vient de vos propres actions." - Dalaï Lama`,
+  `"L'imagination est plus importante que le savoir." - Albert Einstein`
+];
+function changerCitation(){
+  const index = Math.floor(Math.random() * citations.length);
+  document.getElementById('citation').textContent = citations[index];
+}
+</script>
+</body>
+</html>
